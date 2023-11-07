@@ -4,13 +4,10 @@ import com.feitosa.customerbaseh2.model.Customer;
 import com.feitosa.customerbaseh2.repositories.CustomerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/customers")
+@RequestMapping(path= "/customers")
 public class CustomerController {
 
     private CustomerRepository customerRepository;
@@ -20,6 +17,7 @@ public class CustomerController {
         this.customerRepository = customerRepository;
     }
 
+    @PostMapping
     public ResponseEntity<Customer> save (@RequestBody Customer customer){
         customerRepository.save(customer);
         return new ResponseEntity<>(customer, HttpStatus.OK);

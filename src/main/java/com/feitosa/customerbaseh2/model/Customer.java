@@ -67,10 +67,7 @@ public class Customer {
     @NotBlank
     private String stateNumber;
 
-    @NotBlank
     private String ageEmancipatedMinor;
-
-    @NotBlank
     private String employeeRegistration;
 
     @NotBlank
