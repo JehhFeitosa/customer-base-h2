@@ -7,11 +7,12 @@ Protect this branch from force pushing or deletion, or require status checks bef
 
 ## Features 💻
 
-- [x] GET (List of Customer)
+- [x] GET (List of Customers)
    <details><summary>Curl</summary>
         <p>
   
-       curl --location --request GET 'http://localhost:8080/pagamcusentos'
+       curl --location --request GET 'http://localhost:8080/customers' \
+       --data-raw ''
 <br>
 
 - [x] POST (Include Customer)
