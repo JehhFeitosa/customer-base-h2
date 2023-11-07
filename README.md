@@ -15,6 +15,14 @@ Protect this branch from force pushing or deletion, or require status checks bef
        --data-raw ''
 <br>
 
+- [x] GET (Search Customers/{customer_id})
+   <details><summary>Curl</summary>
+        <p>
+  
+       curl --location --request GET 'http://localhost:8080/customers/39608403811' \
+       --data-raw ''
+<br>
+
 - [x] POST (Include Customer)
    <details><summary>Curl</summary>
         <p>

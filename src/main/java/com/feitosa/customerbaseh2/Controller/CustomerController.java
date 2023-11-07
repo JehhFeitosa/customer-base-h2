@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path= "/customers")
@@ -31,6 +33,17 @@ public class CustomerController {
         List<Customer> customer = new ArrayList<>();
         customer = customerRepository.findAll();
         return new ResponseEntity<>(customer, HttpStatus.OK);
+    }
+
+    @GetMapping(path="/{customer_id}")
+    public ResponseEntity<Optional<Customer>> getById(@PathVariable Long customer_id){
+        Optional<Customer> customer;
+        try{
+            customer = customerRepository.findById(customer_id);
+            return new ResponseEntity<Optional<Customer>>(customer, HttpStatus.OK);
+        } catch(NoSuchElementException nsee){
+            return new ResponseEntity<Optional<Customer>>(HttpStatus.NOT_FOUND);
+        }
     }
 
 }
