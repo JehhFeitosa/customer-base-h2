@@ -60,6 +60,15 @@ Protect this branch from force pushing or deletion, or require status checks bef
        --data-raw ''
 <br>
 
+- [x] PUT (Delete Customers/{customer_id})
+   <details><summary>Curl</summary>
+        <p>
+  
+       curl --location --request PUT 'http://localhost:8080/customers/39608403811' \
+       --header 'Content-Type: application/json' \
+       --data-raw '{
+       "nameCustomer": "Mora"
+      }'
 <br>
 
 

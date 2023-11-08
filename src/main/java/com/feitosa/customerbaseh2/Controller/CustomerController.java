@@ -56,6 +56,16 @@ public class CustomerController {
         }
     }
 
-    
+    @PutMapping(value = "/{customer_id}")
+    public ResponseEntity<Customer> update(@PathVariable Long customer_id, @RequestBody Customer newCustomer){
+        return customerRepository.findById(customer_id)
+                .map(customer -> {
+                    customer.setNameCustomer(newCustomer.getNameCustomer());
+                    Customer customerUpdated = customerRepository.save(customer);
+                    return ResponseEntity.ok().body(customerUpdated);
+                }).orElse(ResponseEntity.notFound().build());
+    }
+
+
 
 }
