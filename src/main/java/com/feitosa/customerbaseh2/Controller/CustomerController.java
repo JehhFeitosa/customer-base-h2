@@ -46,4 +46,16 @@ public class CustomerController {
         }
     }
 
+    @DeleteMapping(path="/{customer_id}")
+    public ResponseEntity<Optional<Customer>> deleteById(@PathVariable Long customer_id){
+        try {
+            customerRepository.deleteById(customer_id);
+            return new ResponseEntity<Optional<Customer>>(HttpStatus.OK);
+        } catch (NoSuchElementException nsee){
+            return new ResponseEntity<Optional<Customer>>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    
+
 }
