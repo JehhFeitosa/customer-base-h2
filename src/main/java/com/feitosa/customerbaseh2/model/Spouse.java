@@ -10,7 +10,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//@Entity
+@Entity
+@Table(name= "spouses")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,7 +19,6 @@ import lombok.Setter;
 public class Spouse {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long spouse_id;
 
     @NotNull

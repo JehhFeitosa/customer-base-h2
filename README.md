@@ -71,9 +71,46 @@ Protect this branch from force pushing or deletion, or require status checks bef
       }'
 <br>
 
-
-
-
+- [x] POST (Include Customer with Spouse)
+   <details><summary>Curl</summary>
+        <p>
+  
+       curl --location --request POST 'http://localhost:8080/customers' \
+       --header 'Content-Type: application/json' \
+       --data-raw '{
+       "customer_id": 39608403811,
+       "dateBirth": "06/10/1992",
+       "nameCustomer": "Jesga",
+       "personCode": "010101",
+       "sex": "F",
+       "sexDescription": "Feminino",
+       "maritalStatusCode": "S",
+       "maritalStatusDescription": "Solteira",
+       "documentTypeCode": "RG",
+       "documentTypeDescription": "RG",
+       "numberDocument": "487682580",
+       "documentIssuanceDate": "28/08/2020",
+       "issuingBody": "test",
+       "issuingState": "test",
+       "acronymEmitter": "test",
+       "stateNumber": "test",
+       "ageEmancipatedMinor": "",
+       "employeeRegistration": "",
+       "companyCode": "91",
+       "spouse" : {
+         "spouse_id": 0102,
+         "numberContract": 01,
+         "agency": "000001",
+         "codeGroup": "0004",
+         "codeProduct": "02",
+         "subProduct": "0003",
+         "personCodeOrigin": "010110",
+         "codeUser": "1221",
+         "origin": "origin",
+         "personCodeSpouseGuarantor": "002103"
+       }
+      }'
+<br>
 
 <a href="https://github.com/JehhFeitosa">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/58116519?s=400&u=8b96c6759c724308b3cfb9e6a2480fad3f5107c2&v=4" width="100px;" alt=""/>

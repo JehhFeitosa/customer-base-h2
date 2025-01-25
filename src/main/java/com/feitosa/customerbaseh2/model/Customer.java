@@ -2,8 +2,6 @@ package com.feitosa.customerbaseh2.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name= "customer")
+@Table(name= "customers")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -72,5 +70,13 @@ public class Customer {
 
     @NotBlank
     private String companyCode;
+
+    //@Column(name = "spouse-id")
+    @OneToOne
+    @JoinColumn
+    private Spouse spouse;
+
+//    @ManyToMany
+//    private Quota quota;
 
 }
